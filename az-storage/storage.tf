@@ -11,6 +11,9 @@ resource "azurerm_storage_container" "demo_container" {
     name                  = "democontainer"
     storage_account_name  = azurerm_storage_account.demo_sa.name
 
+    # in v4 provider, name is deprecated.  in v5, id will be required:
+    # storage_account_id = azurerm_storage_account.demosa.id
+
     # this access level is private by default
     # but here we are explicitly setting it to blob
     container_access_type = "blob"
